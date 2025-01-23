@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -13,5 +13,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", home)
 
-	fmt.Println("Hello world!")
+	log.Print("starting server on :4000")
+
+	http.ListenAndServe(":4000", mux)
 }
