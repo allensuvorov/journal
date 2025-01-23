@@ -15,5 +15,5 @@ func main() {
 
 	log.Print("starting server on :4000")
 
-	http.ListenAndServe(":4000", mux)
+	log.Fatal(http.ListenAndServe(":4000", mux))
 }
